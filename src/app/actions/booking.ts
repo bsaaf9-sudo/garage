@@ -20,7 +20,7 @@ export async function createBooking(formData: {
   date: string;
   vehicle: string;
 }) {
-  const { userId } = auth();
+  const { userId } = await auth();
   const user = await currentUser();
 
   if (!userId || !user) {
